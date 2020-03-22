@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.UUID;
 
 
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Entity(name = "User")
 public abstract class User {
 
@@ -21,7 +22,7 @@ public abstract class User {
     public final Date joiningDate;
 
     @OneToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "username")
     public Account account;
 
 

@@ -6,10 +6,10 @@ import java.util.UUID;
 @Entity(name = "account")
 public class Account {
 
-    @Id
+    @Column
     private final String id;
 
-    @Column
+    @Id
     private String username;
 
     @Column
@@ -46,5 +46,9 @@ public class Account {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getId() {
+        return id;
     }
 }
