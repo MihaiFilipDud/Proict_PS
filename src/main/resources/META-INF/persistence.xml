@@ -6,7 +6,7 @@
     <persistence-unit name="test">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <properties>
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3308/sys" />
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3308/test" />
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
             <property name="hibernate.connection.username" value="root" />
             <property name="hibernate.connection.password" value="" />
