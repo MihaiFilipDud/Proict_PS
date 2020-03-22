@@ -4,7 +4,7 @@ package entity;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity(name = "ATManagers")
+@Entity(name = "Atmanagers")
 public class ATManager extends User{
 
     @Column

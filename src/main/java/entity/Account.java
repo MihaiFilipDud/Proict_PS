@@ -18,6 +18,9 @@ public class Account {
     @OneToOne(mappedBy = "account")
     private User user;
 
+    public Account(){
+        this.id = UUID.randomUUID().toString();
+    }
     public Account(String username, String password){
         this.id = UUID.randomUUID().toString();
         this.username = username;
