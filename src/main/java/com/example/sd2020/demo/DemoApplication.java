@@ -30,7 +30,6 @@ public class DemoApplication {
 		Login loginAPI = new Login(login);
 		User user = loginAPI.tryLogin("dudu", "666");
 		System.out.println(user.getName());
-
 	}
 
 }

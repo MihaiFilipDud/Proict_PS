@@ -34,11 +34,6 @@ public class ATController extends User{
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(getAirport());
-    }
-
-    @Override
     public String toString() {
         return "ATController{" +
                 "airport='" + airport + '\'' +

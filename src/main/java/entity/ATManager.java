@@ -28,8 +28,10 @@ public class ATManager extends User{
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), getCompany());
+    public String toString() {
+        return "ATManager{" +
+                "company='" + company + '\'' +
+                "} " + super.toString();
     }
 
     public String getCompany() {
@@ -40,10 +42,5 @@ public class ATManager extends User{
         this.company = company;
     }
 
-    @Override
-    public String toString() {
-        return "ATManager{" +
-                "company='" + company + '\'' +
-                "} " + super.toString();
-    }
+
 }

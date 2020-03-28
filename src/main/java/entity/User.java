@@ -54,18 +54,12 @@ public abstract class User {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(id, getName(), getDob(), getJoiningDate(), getAccount());
-    }
-
-    @Override
     public String toString() {
         return "User{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", dob=" + dob +
                 ", joiningDate=" + joiningDate +
-                ", account=" + account +
                 '}';
     }
 
