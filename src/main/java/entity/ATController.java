@@ -2,6 +2,7 @@ package entity;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Objects;
 
 @Entity(name  = "ATControllers")
 public class ATController extends User{
@@ -22,5 +23,25 @@ public class ATController extends User{
 
     public void setAirport(String airport) {
         this.airport = airport;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ATController)) return false;
+        ATController that = (ATController) o;
+        return getAirport().equals(that.getAirport());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getAirport());
+    }
+
+    @Override
+    public String toString() {
+        return "ATController{" +
+                "airport='" + airport + '\'' +
+                "} " + super.toString();
     }
 }

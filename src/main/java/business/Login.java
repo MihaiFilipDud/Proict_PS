@@ -18,10 +18,15 @@ public class Login {
     public User tryLogin(String username, String password){
         Account logging = new Account(username, password);
         User user = login.login(logging);
+        System.out.println(user);
         if(user == null){
+            System.out.println("Login unsuccessful");
+            return null;
+        }else{
             System.out.println("Login successful");
+            return user;
         }
-        return user;
+
     }
 
 }

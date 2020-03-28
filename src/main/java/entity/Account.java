@@ -1,13 +1,11 @@
 package entity;
 
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.UUID;
 
 @Entity(name = "account")
 public class Account {
-
-    @Column
-    private final String id;
 
     @Id
     private String username;
@@ -19,12 +17,34 @@ public class Account {
     private User user;
 
     public Account(){
-        this.id = UUID.randomUUID().toString();
     }
+
     public Account(String username, String password){
-        this.id = UUID.randomUUID().toString();
         this.username = username;
         this.password = password;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Account)) return false;
+        Account account = (Account) o;
+        return getUsername().equals(account.getUsername()) &&
+                getPassword().equals(account.getPassword());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getUsername(), getPassword(), getUser());
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", user=" + user +
+                '}';
     }
 
     public String getUsername() {
@@ -51,7 +71,6 @@ public class Account {
         this.user = user;
     }
 
-    public String getId() {
-        return id;
-    }
+
+
 }

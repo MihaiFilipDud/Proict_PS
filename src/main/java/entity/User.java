@@ -2,6 +2,7 @@ package entity;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Objects;
 import java.util.UUID;
 
 
@@ -10,20 +11,20 @@ import java.util.UUID;
 public abstract class User {
 
     @Id
-    public final String id;
+    private final String id;
 
     @Column
-    public final String name;
+    private final String name;
 
     @Column
-    public final Date dob;
+    private final Date dob;
 
     @Column
-    public final Date joiningDate;
+    private final Date joiningDate;
 
     @OneToOne
     @JoinColumn(name = "username")
-    public Account account;
+    private Account account;
 
 
     public User() {
@@ -39,6 +40,37 @@ public abstract class User {
         this.dob = dob;
         this.joiningDate =  new Date();
         this.account = account;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User)) return false;
+        User user = (User) o;
+        return id.equals(user.id) &&
+                getName().equals(user.getName()) &&
+                getDob().equals(user.getDob()) &&
+                getJoiningDate().equals(user.getJoiningDate());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, getName(), getDob(), getJoiningDate(), getAccount());
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", dob=" + dob +
+                ", joiningDate=" + joiningDate +
+                ", account=" + account +
+                '}';
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getName() {
@@ -60,4 +92,6 @@ public abstract class User {
     public void setAccount(Account account) {
         this.account = account;
     }
+
+
 }

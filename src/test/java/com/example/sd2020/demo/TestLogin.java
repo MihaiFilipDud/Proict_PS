@@ -33,7 +33,8 @@ public class TestLogin {
     public void succsessfulLoginTest(){
         Account account= new Account("dudu", "666");
         User expected = new ATManager("Mihai Filip-Dud", new Date(), account, "TAROM");
-
+        System.out.println(account);
+        System.out.println(expected);
         when(loginFacade.login(account)).thenReturn(expected);
         User result = loginAPI.tryLogin("dudu", "666");
         assertEquals(expected, result);
