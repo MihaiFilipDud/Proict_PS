@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import java.util.Date;
 
 public class LoginRepository implements LoginFacade {
 
@@ -48,6 +49,24 @@ public class LoginRepository implements LoginFacade {
 
         System.out.println("Login successful");
         return user;
+    }
+
+    @Override
+    public User registerManager(String name, Date dob, String company, String username, String password) {
+        Account account = new Account(username, password);
+        ATManager manager = new ATManager(name, dob, account, company);
+        addAccount(account);
+        addUser(manager);
+        return manager;
+    }
+
+    @Override
+    public User registerController(String name, Date dob, String airport, String username, String password) {
+        Account account = new Account(username, password);
+        ATController controller = new ATController(name, dob, account, airport);
+        addAccount(account);
+        addUser(controller);
+        return controller;
     }
 
     public String addUser(User user){

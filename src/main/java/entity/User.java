@@ -47,10 +47,16 @@ public abstract class User {
         if (this == o) return true;
         if (!(o instanceof User)) return false;
         User user = (User) o;
-        return id.equals(user.id) &&
+        return getId().equals(user.getId()) &&
                 getName().equals(user.getName()) &&
                 getDob().equals(user.getDob()) &&
-                getJoiningDate().equals(user.getJoiningDate());
+                getJoiningDate().equals(user.getJoiningDate()) &&
+                getAccount().equals(user.getAccount());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getName(), getDob(), getJoiningDate(), getAccount());
     }
 
     @Override
