@@ -76,7 +76,7 @@ public class LoginRepository implements LoginFacade {
         entityManager.merge(user);
         entityManager.getTransaction().commit();
         entityManager.close();
-        return "Gucci";
+        return "User added";
     }
 
     public String addAccount(Account account){
@@ -86,6 +86,6 @@ public class LoginRepository implements LoginFacade {
         entityManager.merge(account);
         entityManager.getTransaction().commit();
         entityManager.close();
-        return "Gucci";
+        return "Account added";
     }
 }

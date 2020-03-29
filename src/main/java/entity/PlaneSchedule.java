@@ -15,6 +15,9 @@ public class PlaneSchedule {
     private String airport;
 
     @Column
+    private String destination;
+
+    @Column
     private Date arrival;
 
     @Column
@@ -31,10 +34,11 @@ public class PlaneSchedule {
     public PlaneSchedule() {
     }
 
-    public PlaneSchedule(String code, String airport, Date arrival, Date departure, String status, Plane plane) {
+    public PlaneSchedule(String code, String airport, String destination, Date arrival, Date departure, String status, Plane plane) {
         this.code = code;
         this.airport = airport;
         this.arrival = arrival;
+        this.destination = destination;
         this.departure = departure;
         this.status = status;
         this.plane = plane;
@@ -45,13 +49,13 @@ public class PlaneSchedule {
         return "PlaneSchedule{" +
                 "code='" + code + '\'' +
                 ", airport='" + airport + '\'' +
+                ", destination='" + destination + '\'' +
                 ", arrival=" + arrival +
                 ", departure=" + departure +
                 ", status='" + status + '\'' +
                 ", plane=" + plane +
                 '}';
     }
-
 
     public String getCode() {
         return code;
