@@ -35,6 +35,7 @@
         <property name="hibernate.max_fetch_depth" value="3"/>
         <property name="use_sql_comments" value="true" />
         <property name="hibernate.format_sql" value="true" />
+        <property name="hibernate.id.new_generator_mappings" value="false"/>
     </properties>
 </persistence-unit>
 

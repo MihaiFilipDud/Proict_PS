@@ -5,7 +5,7 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-@Entity(name = "Plane")
+@Entity(name = "PlaneSchedule")
 public class PlaneSchedule {
 
     @Id
@@ -27,11 +27,12 @@ public class PlaneSchedule {
     private String status;
 
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "plane_id", referencedColumnName = "ID")
+    @OneToOne
+    @JoinColumn(name = "ID")
     private Plane plane;
 
     public PlaneSchedule() {
+        this.code = "";
     }
 
     public PlaneSchedule(String code, String airport, String destination, Date arrival, Date departure, String status, Plane plane) {

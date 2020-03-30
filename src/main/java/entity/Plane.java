@@ -15,7 +15,7 @@ public class Plane {
     @Column
     private String company;
 
-    @OneToOne(mappedBy = "plane")
+   @OneToOne(mappedBy = "plane")
     private PlaneSchedule PlaneSchedule;
 
     public Plane(){
