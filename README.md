@@ -23,7 +23,7 @@ Pentru implementarea solutiei, am ales sa folosesc Springboot impreuna cu Hibern
 
 Tabele sunt impartite in 2 categorii, cele aferente utilizatorilor, una pentru Controlori de trafic si alta pentru Manageri. Acestea sunt legate printr-o relatie de unu la unu prin campul username cu o tabela ale ce contine credentialele necesare logarii in sistem(username si parola).
 
-![](bd_diagram.jpg)
+![](bd_diagram.JPG)
 
 
 ## Testare
