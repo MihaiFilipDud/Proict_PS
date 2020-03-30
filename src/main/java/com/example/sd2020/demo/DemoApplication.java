@@ -21,7 +21,7 @@ public class DemoApplication {
 
 
 
-		//SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(DemoApplication.class, args);
 		//EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("test");
 		LoginRepository login = new LoginRepository();
 		Login loginAPI = new Login(login);
