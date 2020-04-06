@@ -10,6 +10,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+
+/**
+ * Clasa se ocupa de de operatiile realizate de un contrlor de trafic
+ */
+
 @RestController
 public class ManagerService implements UserService{
 

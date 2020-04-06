@@ -3,7 +3,9 @@ package entity;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
-
+/**
+ * Clasa de entitate ce modeleaza baza de date al unui controlor de trafic aerian.
+ */
 @Entity(name  = "ATControllers")
 public class ATController extends User{
 

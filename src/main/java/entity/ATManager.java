@@ -5,6 +5,9 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
 
+/**
+ * Clasa de entitate ce modeleaza baza de date al unui manager de trafic aerian.
+ */
 @Entity(name = "Atmanagers")
 public class ATManager extends User{
 

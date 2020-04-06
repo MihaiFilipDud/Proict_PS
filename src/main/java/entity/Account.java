@@ -4,6 +4,10 @@ import javax.persistence.*;
 import java.util.Objects;
 import java.util.UUID;
 
+/**
+ * Clasa de entitate pentru baza de date corespunzatoare conturilor de utilizatori.
+ */
+
 @Entity(name = "account")
 public class Account {
 

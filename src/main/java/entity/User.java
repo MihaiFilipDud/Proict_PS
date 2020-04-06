@@ -5,6 +5,9 @@ import java.util.Date;
 import java.util.Objects;
 import java.util.UUID;
 
+/**
+ * Clasa de entitate ce memoreaza datele generale ale utilizatorilor.
+ */
 
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Entity(name = "User")

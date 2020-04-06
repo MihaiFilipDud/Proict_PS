@@ -5,6 +5,10 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Clasa de entitate ce modeleaza baza de date al unui zbor aerian.
+ */
+
 @Entity(name = "PlaneSchedule")
 public class PlaneSchedule {
 

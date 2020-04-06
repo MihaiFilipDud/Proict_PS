@@ -5,6 +5,10 @@ import entity.User;
 
 import java.util.Date;
 
+
+/**
+ * Interfata de facade a backendului de login
+ */
 public interface LoginFacade  {
 
     User login (Account account);

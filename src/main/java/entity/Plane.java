@@ -3,6 +3,10 @@ package entity;
 import javax.persistence.*;
 import java.util.Objects;
 
+
+/**
+ * Clasa de entitate ce modeleaza baza de date al unui avion.
+ */
 @Entity(name = "Plane")
 public class Plane {
 

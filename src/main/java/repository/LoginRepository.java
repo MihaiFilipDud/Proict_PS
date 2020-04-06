@@ -11,12 +11,22 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 import java.util.Date;
 
+/**
+ * Clasa de repository ce realizeaza backendul operatiilor de login si register.
+ */
+
 public class LoginRepository implements LoginFacade {
 
     private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("test");
 
     public LoginRepository(){};
 
+
+    /**
+     * Metoda primeste un obiect de tip account si realizeaza interogarea bazei de date pentru extragerea informatiilor utilizatorului in cazul unui login cu succes.
+     * @param account
+     * @return
+     */
     @Override
     public User login(Account account) {
 
@@ -51,6 +61,16 @@ public class LoginRepository implements LoginFacade {
         return user;
     }
 
+
+    /**
+     * Metoda realizeaza adaugarea unui nou cont de manager in baza de date aferenta.
+     * @param name
+     * @param dob
+     * @param company
+     * @param username
+     * @param password
+     * @return
+     */
     @Override
     public User registerManager(String name, Date dob, String company, String username, String password) {
         Account account = new Account(username, password);
@@ -60,6 +80,16 @@ public class LoginRepository implements LoginFacade {
         return manager;
     }
 
+
+    /**
+     * Metoda realizeaza adaugarea unui nou cont de controlor in baza de date aferenta.
+     * @param name
+     * @param dob
+     * @param airport
+     * @param username
+     * @param password
+     * @return
+     */
     @Override
     public User registerController(String name, Date dob, String airport, String username, String password) {
         Account account = new Account(username, password);
@@ -69,6 +99,12 @@ public class LoginRepository implements LoginFacade {
         return controller;
     }
 
+
+    /**
+     * Metoda ce adauga un nou user in baza de date
+     * @param user
+     * @return
+     */
     public String addUser(User user){
 
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -79,6 +115,11 @@ public class LoginRepository implements LoginFacade {
         return "User added";
     }
 
+    /**
+     * Metoda ce adauga un nou cont de utilizator in baza de date
+     * @param account
+     * @return
+     */
     public String addAccount(Account account){
 
         EntityManager entityManager = entityManagerFactory.createEntityManager();

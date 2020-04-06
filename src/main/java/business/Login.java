@@ -11,6 +11,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+
+/**
+ * Aceasta clasa se ocupa de operatiile de login si de register ale utilizatorilor.
+ */
+
 @RestController
 public class Login {
 
