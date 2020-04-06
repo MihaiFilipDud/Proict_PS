@@ -23,18 +23,18 @@ public class DemoApplication {
 
 		SpringApplication.run(DemoApplication.class, args);
 		//EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("test");
-		LoginRepository login = new LoginRepository();
-		Login loginAPI = new Login(login);
-		ManagerFacade managerFacade = new ManagerRepository();
-		ManagerService manager = new ManagerService(managerFacade);
-		loginAPI.addObserver(manager);
+		//LoginRepository login = new LoginRepository();
+		//Login loginAPI = new Login(login);
+		//ManagerFacade managerFacade = new ManagerRepository();
+		//ManagerService manager = new ManagerService(managerFacade);
+		//loginAPI.addObserver(manager);
 		//Account dudu = new Account("dudu", "666");
 		//User dud = new ATManager("Mihai Filip-Dud", new Date(), dudu, "TAROM");
 		//login.addAccount(dudu);
 		//login.addUser(dud);
 
-		User user = loginAPI.tryLogin("dudu", "666");
-		System.out.println(user.getName());
+		//User user = loginAPI.tryLogin("dudu", "666");
+		//System.out.println(user.getName());
 		//User user = loginAPI.registerController("Andrei Costea", new Date(), "JFK", "dutu", "1234");
 		//Account account = user.getAccount();
 		//User user = loginAPI.tryLogin("dutu", "1234");

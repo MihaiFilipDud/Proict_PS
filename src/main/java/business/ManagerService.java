@@ -67,4 +67,12 @@ public class ManagerService implements UserService{
         managers.add((ATManager) o);
         System.out.println("ATManager added");
     }
+
+    public List<ATManager> getManagers() {
+        return managers;
+    }
+
+    public void setManagers(List<ATManager> managers) {
+        this.managers = managers;
+    }
 }
