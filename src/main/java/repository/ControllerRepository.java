@@ -43,6 +43,10 @@ public class ControllerRepository implements ControllerFacade{
         return report.getClass().getSimpleName();
     }
 
+    /**
+     * Metoda ce returneaza din baza de date toate zborurile sub forma de lista.
+     * @return
+     */
     public List<PlaneSchedule> getSchedule(){
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         List<PlaneSchedule> schedule = entityManager.createQuery("SELECT a FROM  PlaneSchedule a", PlaneSchedule.class).getResultList();

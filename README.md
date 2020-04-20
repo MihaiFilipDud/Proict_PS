@@ -25,6 +25,9 @@ Tabele sunt impartite in 2 categorii, cele aferente utilizatorilor, una pentru C
 
 Totodata am creat tabele aferente unei curse aeriene si unui avion. Tabela Plane contine datele ce descriun un avion, iar tabele PlaneSchedule contine cursele aeriene ce se realizeza. Acestea sunt legate prin intermediul campului ID din PlaneSchedule in relatie 1 la 1 cu acelasi camp din tabela Plane.
 
+Am imlementat facoty design pattern pentru a realizaq generarea de rapoarte a programului de zboruri in functie de tipul de fisier dorit(pdf sau txt). Controlorul de trafic poate genera acest raport primind extensia de fisier.
+
+
 ### Diagrama baza de date
 ![](bd_diagram.JPG)
 
