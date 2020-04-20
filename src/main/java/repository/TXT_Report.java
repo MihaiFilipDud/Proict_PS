@@ -1,0 +1,22 @@
+package repository;
+
+
+import entity.PlaneSchedule;
+
+import java.util.List;
+
+/**
+ * Clasa ce va genera un fisier TXT de raport al planurilor de zbor.
+ */
+
+public class TXT_Report implements Report {
+
+    /**
+     * Metoda ce va genera raportul
+     * @return
+     */
+    @Override
+    public String generateReport(List<PlaneSchedule> schedule) {
+        return null;
+    }
+}

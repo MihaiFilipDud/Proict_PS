@@ -11,5 +11,6 @@ public interface ControllerFacade {
 
     String addPlane(Plane plane);
     String addFlight(PlaneSchedule flight);
+    String generateReport(String type);
 
 }
