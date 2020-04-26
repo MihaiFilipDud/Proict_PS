@@ -2,6 +2,7 @@ package repository;
 
 import entity.Plane;
 import entity.PlaneSchedule;
+import org.hibernate.SessionFactory;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -16,16 +17,6 @@ import java.util.List;
 public class ControllerRepository implements ControllerFacade{
 
     private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("test");
-
-    @Override
-    public String addPlane(Plane plane) {
-        return null;
-    }
-
-    @Override
-    public String addFlight(PlaneSchedule flight) {
-        return null;
-    }
 
     /**
      * Metoda ce genereaza un raport in functie de tipul de fisier cerut.
@@ -51,6 +42,29 @@ public class ControllerRepository implements ControllerFacade{
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         List<PlaneSchedule> schedule = entityManager.createQuery("SELECT a FROM  PlaneSchedule a", PlaneSchedule.class).getResultList();
         return schedule;
+    }
+
+    /**
+     * Metoda cauta un anumit zbor si ii updateaza statusul in caz ca acesta se afla in baza de date
+     * @param code
+     * @param status
+     * @return
+     */
+    @Override
+    public String updateFlightStatus(String code, String status) {
+
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        entityManager.getTransaction().begin();
+        PlaneSchedule flight = entityManager.find(PlaneSchedule.class, code);
+        entityManager.getTransaction().commit();
+        if(flight == null){
+            return "The specified flight was not found in the flisght schedule!";
+        }
+        flight.setStatus(status);
+        entityManager.getTransaction().begin();
+        entityManager.merge(flight);
+        entityManager.getTransaction().commit();
+        return "Flight status has been updated successfully";
     }
 
 }

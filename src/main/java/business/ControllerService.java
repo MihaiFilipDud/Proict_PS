@@ -2,6 +2,8 @@ package business;
 
 import entity.ATController;
 import entity.ATManager;
+import entity.PlaneSchedule;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import repository.ControllerFacade;
@@ -31,6 +33,26 @@ public class ControllerService implements UserService{
     @PostMapping("/getReport")
     public String getReport(String type){
         return controller.generateReport(type);
+    }
+
+    /**
+     * Metoda ce returneaza intreg programul de zboruri
+     * @return
+     */
+    @GetMapping("/getSchedule")
+    public List<PlaneSchedule> getSchedule(){
+        return controller.getSchedule();
+    }
+
+    /**
+     * Metoda ce updateaza statusul unui zbor
+     * @param code
+     * @param status
+     * @return
+     */
+    @PostMapping("/updateFlight")
+    public String updateFlightStatus(String code, String status){
+        return controller.updateFlightStatus(code, status);
     }
 
     @Override
