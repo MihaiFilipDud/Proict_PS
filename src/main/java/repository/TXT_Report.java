@@ -3,6 +3,7 @@ package repository;
 
 import entity.PlaneSchedule;
 
+import java.io.*;
 import java.util.List;
 
 /**
@@ -17,6 +18,18 @@ public class TXT_Report implements Report {
      */
     @Override
     public String generateReport(List<PlaneSchedule> schedule) {
-        return null;
+        try (Writer writer = new BufferedWriter(new OutputStreamWriter(
+                new FileOutputStream("FlightsReport.txt"), "utf-8"))) {
+            for(PlaneSchedule flight:schedule) {
+                writer.write(flight.toString()+"\n\n");
+            }
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "Wrote a TXT report!";
     }
 }

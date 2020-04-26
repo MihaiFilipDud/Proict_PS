@@ -1,7 +1,11 @@
 package repository;
 
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.PdfWriter;
 import entity.PlaneSchedule;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.List;
 
 /**
@@ -16,6 +20,30 @@ public class PDF_Report implements Report{
      */
     @Override
     public String generateReport(List<PlaneSchedule> schedule) {
-        return null;
+
+        Document document = new Document();
+        try {
+            PdfWriter.getInstance(document, new FileOutputStream("FlightsReport.pdf"));
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        document.open();
+        Font font = FontFactory.getFont(FontFactory.COURIER, 16, BaseColor.BLACK);
+        for(PlaneSchedule flight:schedule) {
+            Chunk chunk = new Chunk(flight.toString()+"\n\n", font);
+        }
+        Chunk chunk = new Chunk("Hello World", font);
+
+        try {
+            document.add(chunk);
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        }
+        document.close();
+
+        return "Wrote a PDF report!";
     }
 }
