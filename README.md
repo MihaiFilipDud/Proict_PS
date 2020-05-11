@@ -34,6 +34,8 @@ Am imlementat facoty design pattern pentru a realizaq generarea de rapoarte a pr
 ### Diagrama de clase
 ![](class_diagram.JPG)
 
+### Diagrama de secventa a login-ului
+![](LoginSequence.JPG)
 
 
 
