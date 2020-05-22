@@ -32,6 +32,7 @@ public class ControllerService implements UserService{
      * @return
      */
     @PostMapping("/getReport")
+    @CrossOrigin(origins = "*")
     public String getReport(String type){
         return controller.generateReport(type);
     }
@@ -53,6 +54,7 @@ public class ControllerService implements UserService{
      * @return
      */
     @PostMapping("/updateFlight")
+    @CrossOrigin(origins = "*")
     public String updateFlightStatus(String code, String status){
         return controller.updateFlightStatus(code, status);
     }

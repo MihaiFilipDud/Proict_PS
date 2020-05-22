@@ -33,9 +33,9 @@ public class PDF_Report implements Report{
         document.open();
         Font font = FontFactory.getFont(FontFactory.COURIER, 16, BaseColor.BLACK);
         for(PlaneSchedule flight:schedule) {
-            Chunk chunk = new Chunk(flight.toString()+"\n\n", font);
+            Paragraph subPara = new Paragraph(flight.toString()+"\n\n", font);
             try {
-                document.add(chunk);
+                document.add(subPara);
             } catch (DocumentException e) {
                 e.printStackTrace();
             }

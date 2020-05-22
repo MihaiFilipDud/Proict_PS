@@ -15,7 +15,7 @@ public class Account {
     @Column
     private String password;
 
-    @OneToOne(mappedBy = "account")
+    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private User user;
 
     public Account(){

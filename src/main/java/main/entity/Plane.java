@@ -1,5 +1,7 @@
 package main.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -11,6 +13,12 @@ import java.util.Objects;
 public class Plane {
 
     @Id
+    @Column(name = "ID",unique=true, nullable = false)
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
+    )
     private String ID;
 
     @Column

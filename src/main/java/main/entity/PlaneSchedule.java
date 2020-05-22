@@ -30,8 +30,9 @@ public class PlaneSchedule {
     private String status;
 
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "ID")
+
     private Plane plane;
 
     public PlaneSchedule() {

@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import main.repository.ManagerFacade;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -55,10 +57,20 @@ public class ManagerService implements UserService{
      * @return
      */
     @PostMapping("/addFlight") //localhost:8080/addFlight
-    public PlaneSchedule addFlight(String code, String airport, String destination, Date arrival, Date departure, String status, Plane plane){
-        PlaneSchedule flight = new PlaneSchedule(code, airport, destination, arrival, departure, status, plane);
-        System.out.println(manager.addFlight(flight));
-        return flight;
+    @CrossOrigin(origins = "*")
+    public String addFlight(String code, String airport, String destination, String arrival, String departure, String status, String plane){
+
+        Date ar = new Date();
+        Date dep = new Date();
+        try {
+            ar = new SimpleDateFormat("dd/MM/yyyy").parse(arrival);
+            dep = new SimpleDateFormat("dd/MM/yyyy").parse(departure);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        String exec = manager.addFlight(code, airport, destination, ar, dep, status, plane);
+        System.out.println(exec);
+        return exec;
     }
 
     /**

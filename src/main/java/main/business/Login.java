@@ -35,6 +35,7 @@ public class Login {
      * @return
      */
     @PostMapping("/tryLogin") //localhost:8080/tryLogin
+    @CrossOrigin(origins = "*")
     public User tryLogin(String username, String password){
         Account logging = new Account(username, password);
         User user = login.login(logging);
@@ -60,6 +61,7 @@ public class Login {
      * @return
      */
     @PostMapping("/registerManager") //localhost:8080/registerManager
+    @CrossOrigin(origins = "*")
     public User registerManager(String name, Date dob, String company, String username, String password){
         User user = login.registerManager(name,dob,company,username,password);
         System.out.println(user);
@@ -82,6 +84,7 @@ public class Login {
      * @return
      */
     @PostMapping("/registerController") //localhost:8080/registerController
+    @CrossOrigin(origins = "*")
     public User registerController(String name, Date dob, String airport, String username, String password){
         User user = login.registerController(name,dob,airport,username,password);
         System.out.println(user);

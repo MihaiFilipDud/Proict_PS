@@ -25,7 +25,7 @@ public abstract class User {
     @Column
     private final Date joiningDate;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "username")
     private Account account;
 
