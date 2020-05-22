@@ -1,0 +1,2 @@
+PlaneSchedule{code='123', airport='JFK', destination='Baneasa', arrival=2020-03-30 17:58:29.0, departure=2020-03-30 17:58:29.0, status='OK', plane=Plane{ID='123', model='A380', company='TAROM'}}
+
