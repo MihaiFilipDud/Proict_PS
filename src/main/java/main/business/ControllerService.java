@@ -56,7 +56,9 @@ public class ControllerService implements UserService{
     @PostMapping("/updateFlight")
     @CrossOrigin(origins = "*")
     public String updateFlightStatus(String code, String status){
-        return controller.updateFlightStatus(code, status);
+        String ret = controller.updateFlightStatus(code, status);
+        System.out.println(code +" "+ret);
+        return ret;
     }
 
     @Override

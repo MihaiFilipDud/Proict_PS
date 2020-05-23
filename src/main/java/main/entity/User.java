@@ -1,5 +1,7 @@
 package main.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
@@ -25,8 +27,9 @@ public abstract class User {
     @Column
     private final Date joiningDate;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "username")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Account account;
 
 
@@ -39,6 +42,14 @@ public abstract class User {
 
     public User(String name, Date dob, Account account) {
         this.id = UUID.randomUUID().toString();
+        this.name = name;
+        this.dob = dob;
+        this.joiningDate =  new Date();
+        this.account = account;
+    }
+
+    public User(String id, String name, Date dob, Account account) {
+        this.id = id;
         this.name = name;
         this.dob = dob;
         this.joiningDate =  new Date();

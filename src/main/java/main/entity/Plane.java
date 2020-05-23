@@ -1,5 +1,6 @@
 package main.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -14,11 +15,6 @@ public class Plane {
 
     @Id
     @Column(name = "ID",unique=true, nullable = false)
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(
-            name = "UUID",
-            strategy = "org.hibernate.id.UUIDGenerator"
-    )
     private String ID;
 
     @Column
@@ -28,6 +24,7 @@ public class Plane {
     private String company;
 
    @OneToOne(mappedBy = "plane")
+   @JsonIgnore
     private PlaneSchedule PlaneSchedule;
 
     public Plane(){

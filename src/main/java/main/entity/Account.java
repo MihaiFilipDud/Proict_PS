@@ -1,5 +1,8 @@
 package main.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 /**
@@ -15,7 +18,8 @@ public class Account {
     @Column
     private String password;
 
-    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JsonIgnore
     private User user;
 
     public Account(){

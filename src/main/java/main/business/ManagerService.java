@@ -41,8 +41,9 @@ public class ManagerService implements UserService{
     @CrossOrigin(origins = "*")
     public Plane addPlane(String id, String model, String company){
         Plane plane = new Plane(id, model, company);
-        System.out.println(manager.addPlane(plane));
-        return plane;
+        Plane added = manager.addPlane(plane);
+        System.out.println(added);
+        return added;
     }
 
     /**
@@ -58,7 +59,7 @@ public class ManagerService implements UserService{
      */
     @PostMapping("/addFlight") //localhost:8080/addFlight
     @CrossOrigin(origins = "*")
-    public String addFlight(String code, String airport, String destination, String arrival, String departure, String status, String plane){
+    public PlaneSchedule addFlight(String code, String airport, String destination, String arrival, String departure, String status, String plane){
 
         Date ar = new Date();
         Date dep = new Date();
@@ -68,7 +69,7 @@ public class ManagerService implements UserService{
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        String exec = manager.addFlight(code, airport, destination, ar, dep, status, plane);
+        PlaneSchedule exec = manager.addFlight(code, airport, destination, ar, dep, status, plane);
         System.out.println(exec);
         return exec;
     }

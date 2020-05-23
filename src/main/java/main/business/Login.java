@@ -6,6 +6,8 @@ import main.entity.User;
 import main.repository.LoginFacade;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -46,6 +48,7 @@ public class Login {
         }else{
             System.out.println("Login successful");
             notifyObservers(user);
+            //user.setAccount(logging);
             return user;
         }
 
@@ -62,8 +65,17 @@ public class Login {
      */
     @PostMapping("/registerManager") //localhost:8080/registerManager
     @CrossOrigin(origins = "*")
-    public User registerManager(String name, Date dob, String company, String username, String password){
-        User user = login.registerManager(name,dob,company,username,password);
+    public User registerManager(String name, String dob, String company, String username, String password){
+        Date dob_d = new Date();
+
+        try {
+            dob_d = new SimpleDateFormat("dd/MM/yyyy").parse(dob);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        User user = login.registerManager(name,dob_d,company,username,password);
         System.out.println(user);
         if(user == null){
             System.out.println("Register unsuccessful");
@@ -85,8 +97,16 @@ public class Login {
      */
     @PostMapping("/registerController") //localhost:8080/registerController
     @CrossOrigin(origins = "*")
-    public User registerController(String name, Date dob, String airport, String username, String password){
-        User user = login.registerController(name,dob,airport,username,password);
+    public User registerController(String name, String dob, String airport, String username, String password){
+        Date dob_d = new Date();
+        try {
+            dob_d = new SimpleDateFormat("dd/MM/yyyy").parse(dob);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        User user = login.registerController(name,dob_d,airport,username,password);
         System.out.println(user);
         if(user == null){
             System.out.println("Register unsuccessful");

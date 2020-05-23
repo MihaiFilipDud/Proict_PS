@@ -1,4 +1,6 @@
 PlaneSchedule{code='123', airport='JFK', destination='Baneasa', arrival=2020-03-30 17:58:29.0, departure=2020-03-30 17:58:29.0, status='OK', plane=Plane{ID='123', model='A380', company='TAROM'}}
 
+PlaneSchedule{code='1234', airport='sdfrwds', destination='sdfsdf', arrival=2020-06-22 00:00:00.0, departure=2020-06-22 00:00:00.0, status='dfgdf', plane=Plane{ID='543', model='A320', company='Airbus'}}
+
 PlaneSchedule{code='5556', airport='Cluj', destination='Viena', arrival=2020-05-21 00:00:00.0, departure=2020-05-21 00:00:00.0, status='Landed', plane=Plane{ID='2341', model='747', company='Boeing'}}
 

@@ -58,7 +58,7 @@ public class ControllerRepository implements ControllerFacade{
         PlaneSchedule flight = entityManager.find(PlaneSchedule.class, code);
         entityManager.getTransaction().commit();
         if(flight == null){
-            return "The specified flight was not found in the flisght schedule!";
+            return "The specified flight was not found in the flight schedule!";
         }
         flight.setStatus(status);
         entityManager.getTransaction().begin();

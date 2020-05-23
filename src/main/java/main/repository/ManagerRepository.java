@@ -24,13 +24,13 @@ public class ManagerRepository implements ManagerFacade{
      * @param plane
      * @return
      */
-    public String addPlane(Plane plane){
+    public Plane addPlane(Plane plane){
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
         entityManager.merge(plane);
         entityManager.getTransaction().commit();
         entityManager.close();
-        return "Plane added";
+        return plane;
     }
 
 
@@ -45,7 +45,7 @@ public class ManagerRepository implements ManagerFacade{
      * @param plane
      * @return
      */
-    public String addFlight(String code, String airport, String destination, Date arrival, Date departure, String status, String plane){
+    public PlaneSchedule addFlight(String code, String airport, String destination, Date arrival, Date departure, String status, String plane){
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
         Plane search = entityManager.find(Plane.class, plane);
@@ -61,7 +61,7 @@ public class ManagerRepository implements ManagerFacade{
         entityManager.merge(flight);
         entityManager.getTransaction().commit();
         entityManager.close();
-        return "Flight added";
+        return flight;
     }
 
 
