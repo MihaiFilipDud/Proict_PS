@@ -18,7 +18,7 @@ public interface ManagerFacade {
     }
     Plane addPlane(Plane plane);
     PlaneSchedule addFlight(String code, String airport, String destination, Date arrival, Date departure, String status, String plane);
-    List<Plane> getPlanes();
+    List<Plane> getPlanes(String company);
     String deletePlane(String id);
     String deleteFlight(String code);
 }

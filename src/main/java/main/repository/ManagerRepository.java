@@ -66,13 +66,13 @@ public class ManagerRepository implements ManagerFacade{
     }
 
     /**
-     * Returneaza toate avioanele din baza de date
+     * Returneaza toate avioanele din baza de date de la acceasi companie
      * @return
      */
     @Override
-    public List<Plane> getPlanes() {
+    public List<Plane> getPlanes(String company) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
-        List<Plane> planes = entityManager.createQuery("SELECT a FROM  Plane a", Plane.class).getResultList();
+        List<Plane> planes = entityManager.createQuery("SELECT u FROM Plane u WHERE company = '" + company+"'", Plane.class).getResultList();
         return planes;
     }
 

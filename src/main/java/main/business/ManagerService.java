@@ -65,8 +65,8 @@ public class ManagerService implements UserService{
         Date ar = new Date();
         Date dep = new Date();
         try {
-            ar = new SimpleDateFormat("dd/MM/yyyy").parse(arrival);
-            dep = new SimpleDateFormat("dd/MM/yyyy").parse(departure);
+            ar = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm").parse(arrival);
+            dep = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm").parse(departure);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -76,13 +76,13 @@ public class ManagerService implements UserService{
     }
 
     /**
-     * Metoda corespunzatoare endpointului ce returneaza toate avioanele din baza de date
+     * Metoda corespunzatoare endpointului ce returneaza toate avioanele din baza de date de la aceeasi companie
      * @return
      */
     @GetMapping("/getPlanes") //localhost:8080/getPlanes
     @CrossOrigin(origins = "*")
-    public List<Plane> getSchedule(){
-        List<Plane> list= manager.getPlanes();
+    public List<Plane> getPlanes(String company){
+        List<Plane> list= manager.getPlanes(company);
         return list;
     }
 
