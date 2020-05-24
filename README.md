@@ -5,16 +5,16 @@
 ## Descrierea problemei
 
 Am ales sa creez o aplicatie care sa ajute controlorii de trafic aerian sa managerieze cursele ce vin si pleaca de pe un aeroport. Totodata, aplicatia poate sa-i ajute pe managerii companiilor ce efectueaza curse sa si le planifice in functie de programul sosirilor si plecarilor de pe un aeroport pentru optimizarea si eficientizarea procesului.
-Astfel, aplicatia poate rezolva probleme de o importanta ridicata intr-un mediu foarte riguros si de mare importanta.
+Astfel, aplicatia poate rezolva probleme de o importanta ridicata intr-un mediu foarte riguros si de mare insemnatate.
 
 ## Solutia aleasa
 
 Aplicatia incorporeaza o suita de moduri de moduri de lucru, separate in functie de tipul de user care o foloseste.
 Userii pot fi:
-* Controlori de trafic aerian ce au posibilitatea de a controla cursele ce vin si pleaca de pe un anumit aeroport, putand genera rapoarte si modifica la nevoie planuri de zbor prin operatiuni de tip CRUD pe bazele de date aferente.
-* Manageri ai unei companii aeriene ce pot verifica planurile de zbor al unui aeroport pentru a creea curse aeriene. Ei pot modifica cursele sau chiar anula, tot prin intermediul operatiilor de tip CRUD asupra bazei de date.
+* Controlori de trafic aerian ce au posibilitatea de a gestiona cursele ce vin si pleaca in spatiul aerian definit, putand genera rapoarte si modifica la nevoie planuri de zbor prin operatiuni de tip CRUD pe bazele de date aferente.
+* Manageri ai unei companii aeriene ce pot modifica planurile de zbor al avioanelor din subordinea lor pentru a creea curse aeriene. Ei pot gestiona avioanele si zborurile companiei lor, tot prin intermediul operatiilor de tip CRUD asupra bazei de date.
 
-Aplicatia incorporeaza un sistem de login ce ofera acces la un cont in baza de date aferent tipului de utilizator ce face log-inul.
+Aplicatia incorporeaza un sistem de login ce ofera acces la un cont in baza de date aferent tipului de utilizator ce face logi-nul.
 
 
 ## Implementare
@@ -56,3 +56,28 @@ Am structurat aplicatia pe baza arhitecturii pe 3 straturi BLL:
 ## Testare
 
 Testarea se realizeaza cu ajutorul JUnit. Pentru a usura generarea cazurilor de test se utilizeza pachetul Mockito. Acestea vor putea atesta veridicitatea si corectitudinea solutiei alese si implementate.
+
+
+##Manual de utilizare
+
+1. Se lanseaza in executie aplicatia java de backend prin rularea metodei main din clasa DemoAplciation.
+
+2. Se acceseaza pagina ***index.html*** din proiectul de UI.
+
+3. Un utilizator are opriunea de a se loga in contul lui cu ajutorul usernameului si parolei aferente, fiind apoi redirectionat inspre pagina cu comenzile corespunzatoare tipului de cont. Totodata, un utilizator isi poate inregistra un nou cont, fie de manager, fie de controller.
+
+	* Managerul poate adauga avioane si zboruri in sistem, poate vedea toate avioanele companiei sale sau poate sa stearga avioane si zboruri.
+
+	* Controllerul poate genera un raport al zborurilor in doua formate: TXT sau PDF, fiserul regasindu-se in folderul sursa al aplicatiei. Totodata, acesta poate vedea toate zborurile la un moment dat si poate sa modifice statusul unui zbor.
+
+4. La orice moment se poate reveni la pagina anterioara prin apasarea butonului de inapoi al browserului.
+
+## Concluzii
+
+Proiectul in starea actuala implementeaza operatiile de baza ce ar putea fi realizate in cadrul unui sistem de gestiune al traficului aerian. Datorita implementarii modulare si flexibile, acesta poate fi foarte usor moidficat si imbunatatit prin adaugarea de noi functionalitati si servicii. Bazele sistemului sunt solid implementate, astfel ca acesta va putea fi upgradat fluid si voluminos prin adaugarea de module ce ar putea:
+	* adaugarea conceptului de pasager care se poate imbarca intr-un anumit zbor
+	* modularizarea unei curse aeriene pentru a permite posibilitatea de cumparare de bilete
+	* adaugarea de noi capabilitati controllerului de trafic aerian, cum ar fi radar meteo
+	* extinderea sistemului de login
+
+
