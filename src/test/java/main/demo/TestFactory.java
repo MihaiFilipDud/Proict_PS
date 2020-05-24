@@ -5,6 +5,7 @@ import main.business.Login;
 import main.business.ManagerService;
 import main.entity.ATManager;
 import main.entity.Account;
+import main.entity.PlaneSchedule;
 import main.entity.User;
 import org.junit.Before;
 import org.junit.Rule;
@@ -29,6 +30,7 @@ public class TestFactory {
     ControllerFacade controllerFacade;
     ManagerFacade managerFacade;
     ControllerRepository controllerRepository;
+    ArrayList<PlaneSchedule> schedule;
     @Rule
     public MockitoRule rule = MockitoJUnit.rule();
     private Login loginAPI;
@@ -57,6 +59,7 @@ public class TestFactory {
         expected.add(expectedUser);
         when(loginFacade.login(account)).thenReturn(expectedUser);
         User result = loginAPI.tryLogin("dudu", "666");
+        when(controllerService.getReport("PDF")).thenReturn("pdf_report");
         String report = controllerService.getReport("PDF");
         System.out.println(report);
         assertEquals(report.toString(), "pdf_report");

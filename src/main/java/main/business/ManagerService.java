@@ -2,6 +2,7 @@ package main.business;
 
 import main.entity.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import main.repository.ManagerFacade;
@@ -73,6 +74,43 @@ public class ManagerService implements UserService{
         System.out.println(exec);
         return exec;
     }
+
+    /**
+     * Metoda corespunzatoare endpointului ce returneaza toate avioanele din baza de date
+     * @return
+     */
+    @GetMapping("/getPlanes") //localhost:8080/getPlanes
+    @CrossOrigin(origins = "*")
+    public List<Plane> getSchedule(){
+        List<Plane> list= manager.getPlanes();
+        return list;
+    }
+
+    /**
+     * Metoda corespunzatoare endpointului ce sterge un avion din baza de date
+     * @return
+     */
+    @PostMapping("/removePlane")
+    @CrossOrigin(origins = "*")
+    public String removePlane(String id){
+        String ret = manager.deletePlane(id);
+        System.out.println(ret);
+        return ret;
+    }
+
+    /**
+     * Metoda corespunzatoare endpointului ce sterge un zbor din baza de date
+     * @return
+     */
+    @PostMapping("/removeFlight")
+    @CrossOrigin(origins = "*")
+    public String removeFlight(String code){
+        String ret = manager.deleteFlight(code);
+        System.out.println(ret);
+        return ret;
+    }
+
+
 
     /**
      * Metoda din cadrul patternului observer ce este apelata atunci cand se vrea adaugarea unui nou manager

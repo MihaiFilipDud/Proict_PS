@@ -25,7 +25,7 @@ Tabele sunt impartite in 2 categorii, cele aferente utilizatorilor, una pentru C
 
 Totodata am creat tabele aferente unei curse aeriene si unui avion. Tabela Plane contine datele ce descriun un avion, iar tabele PlaneSchedule contine cursele aeriene ce se realizeza. Acestea sunt legate prin intermediul campului ID din PlaneSchedule in relatie 1 la 1 cu acelasi camp din tabela Plane.
 
-Am imlementat facoty design pattern pentru a realizaq generarea de rapoarte a programului de zboruri in functie de tipul de fisier dorit(pdf sau txt). Controlorul de trafic poate genera acest raport primind extensia de fisier.
+Am imlementat factory design pattern pentru a realiza generarea de rapoarte a programului de zboruri in functie de tipul de fisier dorit(pdf sau txt). Controlorul de trafic poate genera acest raport primind extensia de fisier.
 
 
 ### Diagrama baza de date
@@ -41,4 +41,4 @@ Am imlementat facoty design pattern pentru a realizaq generarea de rapoarte a pr
 
 ## Testare
 
-Testarea se realizeaza cu ajutorul JUnit. Pentru a usura generarea cazurilor de test se utilizeza pachetul Mockito. Pana acum am reusit sa testez capabilitatile de login al unui utilizator.
+Testarea se realizeaza cu ajutorul JUnit. Pentru a usura generarea cazurilor de test se utilizeza pachetul Mockito. Acestea vor putea atesta veridicitatea si corectitudinea solutiei alese si implementate.

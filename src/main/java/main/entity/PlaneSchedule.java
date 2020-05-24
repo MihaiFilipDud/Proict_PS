@@ -32,7 +32,6 @@ public class PlaneSchedule {
 
     @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "ID")
-
     private Plane plane;
 
     public PlaneSchedule() {
@@ -108,5 +107,13 @@ public class PlaneSchedule {
 
     public void setPlane(Plane plane) {
         this.plane = plane;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
     }
 }

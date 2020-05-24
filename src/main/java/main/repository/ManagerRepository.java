@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.Date;
+import java.util.List;
 
 /**
  *Clasa de main.repository ce realizeaza backendul operatiilor de realizate de un manager.
@@ -64,6 +65,68 @@ public class ManagerRepository implements ManagerFacade{
         return flight;
     }
 
+    /**
+     * Returneaza toate avioanele din baza de date
+     * @return
+     */
+    @Override
+    public List<Plane> getPlanes() {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        List<Plane> planes = entityManager.createQuery("SELECT a FROM  Plane a", Plane.class).getResultList();
+        return planes;
+    }
+
+    /**
+     * Sterge un avion din baza de date
+     * @param id
+     * @return
+     */
+    @Override
+    public String deletePlane(String id) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        entityManager.getTransaction().begin();
+
+        Plane toFind = entityManager.find(Plane.class, id);
+        if(toFind == null){
+            entityManager.close();
+            return "The plane does not exist!";
+        }
+
+        entityManager.remove(toFind);
+
+        entityManager.getTransaction().commit();
+
+        entityManager.close();
+
+        return "The plane has been removed";
+    }
+
+    /**
+     * Strege un zbor din baza de date
+     * @param code
+     * @return
+     */
+    @Override
+    public String deleteFlight(String code) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        entityManager.getTransaction().begin();
+
+        PlaneSchedule toFind = entityManager.find(PlaneSchedule.class, code);
+        if(toFind == null){
+            entityManager.close();
+            return "The flight does not exist!";
+        }
+
+        entityManager.remove(toFind);
+
+        entityManager.getTransaction().commit();
+
+        entityManager.close();
+
+        return "The flight has has been removed";
+    }
 
 
 }

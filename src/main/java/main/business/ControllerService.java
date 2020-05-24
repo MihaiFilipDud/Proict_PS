@@ -44,7 +44,9 @@ public class ControllerService implements UserService{
     @GetMapping("/getSchedule")
     @CrossOrigin(origins = "*")
     public List<PlaneSchedule> getSchedule(){
-        return controller.getSchedule();
+        List<PlaneSchedule> list= controller.getSchedule();
+        System.out.println(list.get(0));
+        return list;
     }
 
     /**
