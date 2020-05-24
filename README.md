@@ -58,7 +58,7 @@ Am structurat aplicatia pe baza arhitecturii pe 3 straturi BLL:
 Testarea se realizeaza cu ajutorul JUnit. Pentru a usura generarea cazurilor de test se utilizeza pachetul Mockito. Acestea vor putea atesta veridicitatea si corectitudinea solutiei alese si implementate.
 
 
-##Manual de utilizare
+## Manual de utilizare
 
 1. Se lanseaza in executie aplicatia java de backend prin rularea metodei main din clasa DemoAplciation.
 
@@ -75,9 +75,10 @@ Testarea se realizeaza cu ajutorul JUnit. Pentru a usura generarea cazurilor de 
 ## Concluzii
 
 Proiectul in starea actuala implementeaza operatiile de baza ce ar putea fi realizate in cadrul unui sistem de gestiune al traficului aerian. Datorita implementarii modulare si flexibile, acesta poate fi foarte usor moidficat si imbunatatit prin adaugarea de noi functionalitati si servicii. Bazele sistemului sunt solid implementate, astfel ca acesta va putea fi upgradat fluid si voluminos prin adaugarea de module ce ar putea:
-	* adaugarea conceptului de pasager care se poate imbarca intr-un anumit zbor
-	* modularizarea unei curse aeriene pentru a permite posibilitatea de cumparare de bilete
-	* adaugarea de noi capabilitati controllerului de trafic aerian, cum ar fi radar meteo
-	* extinderea sistemului de login
+
+	* Adaugarea conceptului de pasager care se poate imbarca intr-un anumit zbor
+	* Modularizarea unei curse aeriene pentru a permite posibilitatea de cumparare de bilete
+	* Adaugarea de noi capabilitati controllerului de trafic aerian, cum ar fi radar meteo
+	* Extinderea sistemului de login
 
 
