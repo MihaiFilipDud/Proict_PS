@@ -21,7 +21,7 @@ Aplicatia incorporeaza un sistem de login ce ofera acces la un cont in baza de d
 
 Pentru implementarea solutiei, am ales sa folosesc Springboot impreuna cu Hibernate pentru accesul si manipularea bazei de date necesare, instantiata pe un server MySql.
 
-###Baza de date
+### Baza de date
 
 Tabele sunt impartite in 2 categorii, cele aferente utilizatorilor, una pentru Controlori de trafic si alta pentru Manageri. Acestea sunt legate printr-o relatie de unu la unu prin campul username cu o tabela ale ce contine credentialele necesare logarii in sistem(username si parola).
 
@@ -32,20 +32,20 @@ Totodata am creat tabele aferente unei curse aeriene si unui avion. Tabela Plane
 ### Structura aplicatiei
 
 Am structurat aplicatia pe baza arhitecturii pe 3 straturi BLL:
-*Entity: in acest pachet se afla clasele de model ale bazei de date
-*Repository: acest pachet contine clasele ce realizeaza operatiile CRUD asupra bazei de date.
-*Business: contine clasele care se ocupa cu logica aplicatiei
+* Entity: in acest pachet se afla clasele de model ale bazei de date
+* Repository: acest pachet contine clasele ce realizeaza operatiile CRUD asupra bazei de date.
+* Business: contine clasele care se ocupa cu logica aplicatiei
 
 #### Diagrama de clase
 ![](class_diagram.JPG)
 
 #### Design patterns
 
-*Pentru a realiza o legatura cat mai facila intre layer-ele de repository si business am utilizat design patternul ***Facade*** care ofera posibilitatea de a utiliza functiile de acces la baza de date intr-o maniera mult mai simpla.
+* Pentru a realiza o legatura cat mai facila intre layer-ele de repository si business am utilizat design patternul ***Facade*** care ofera posibilitatea de a utiliza functiile de acces la baza de date intr-o maniera mult mai simpla.
 
-*In contextul in care aplicatia are mai multi utilizatori, am dori ca sa putem memora ce utilizator este logat in sistem la un moment dat. Prin intermediul design patter-ului ***Observer*** putem ca atunci cand un utilizator se logheaza cu succes in aplicatie sa ii memoram userul in clasa de service ce ii apartine, trimitand prin metoda notifyObservers() contul sau.
+* In contextul in care aplicatia are mai multi utilizatori, am dori ca sa putem memora ce utilizator este logat in sistem la un moment dat. Prin intermediul design patter-ului ***Observer*** putem ca atunci cand un utilizator se logheaza cu succes in aplicatie sa ii memoram userul in clasa de service ce ii apartine, trimitand prin metoda notifyObservers() contul sau.
 
-*Am imlementat factory design pattern pentru a realiza generarea de rapoarte a programului de zboruri in functie de tipul de fisier dorit(pdf sau txt). Controlorul de trafic poate genera acest raport primind extensia de fisier.
+* Am imlementat factory design pattern pentru a realiza generarea de rapoarte a programului de zboruri in functie de tipul de fisier dorit(pdf sau txt). Controlorul de trafic poate genera acest raport primind extensia de fisier.
 
 
 ### Diagrama de secventa a login-ului
