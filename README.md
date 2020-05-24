@@ -76,9 +76,12 @@ Testarea se realizeaza cu ajutorul JUnit. Pentru a usura generarea cazurilor de 
 
 Proiectul in starea actuala implementeaza operatiile de baza ce ar putea fi realizate in cadrul unui sistem de gestiune al traficului aerian. Datorita implementarii modulare si flexibile, acesta poate fi foarte usor moidficat si imbunatatit prin adaugarea de noi functionalitati si servicii. Bazele sistemului sunt solid implementate, astfel ca acesta va putea fi upgradat fluid si voluminos prin adaugarea de module ce ar putea:
 
-	* Adaugarea conceptului de pasager care se poate imbarca intr-un anumit zbor
-	* Modularizarea unei curse aeriene pentru a permite posibilitatea de cumparare de bilete
-	* Adaugarea de noi capabilitati controllerului de trafic aerian, cum ar fi radar meteo
-	* Extinderea sistemului de login
+* Adaugarea conceptului de pasager care se poate imbarca intr-un anumit zbor
+
+* Modularizarea unei curse aeriene pentru a permite posibilitatea de cumparare de bilete
+
+* Adaugarea de noi capabilitati controllerului de trafic aerian, cum ar fi radar meteo
+
+* Extinderea sistemului de login
 
 
