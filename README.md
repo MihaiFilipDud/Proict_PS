@@ -84,4 +84,6 @@ Proiectul in starea actuala implementeaza operatiile de baza ce ar putea fi real
 
 * Extinderea sistemului de login
 
+* Test
+
 
