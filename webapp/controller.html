@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Airport</title>
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body onload="getCredentials();">
+<!-- partial:index.partial.html -->
+<div class="form">
+      
+      <h1>Controller terminal</h1>
+      <div id="credentials"></div>
+      <ul class="tab-group">
+        <li class="tab active"><a href="#get_report">Report</a></li>
+        <li class="tab"><a href="#flight_schedule">Flight Schedule</a></li>
+        <li class="tab"><a href="#update_flight">Update status</a></li>
+      </ul>
+      
+      <div class="tab-content">
+        <div id="get_report" style="display:block;">   
+          <h1>Get a report of the flight schedule</h1>
+          
+          <form action="/" method="post">
+          
+            <div class="field-wrap">
+            <label>
+              Report type
+            </label>
+
+
+            <br><br><br>
+            <select id="report_type" name="report_type" class="select-css">
+              <option value="PDF">PDF</option>
+              <option value="TXT">TXT</option>
+            </select>
+          </div>
+          
+          
+          
+          <button type="button" class="button button-block" id="report_button"/>Generate report</button>
+          
+          </form>
+
+        </div>
+
+        <div id="flight_schedule" style="display:none;">   
+          <h1>Show the entire flight schedule</h1>
+          
+          <form action="/" method="post">
+          
+          <button type="button" class="button button-block" id="flight_schedule_button"/>Show</button>
+          
+          </form>
+
+        </div>
+
+         <div id="update_flight" style="display:none;">   
+          <h1>Update the status for a flight</h1>
+          
+          <form action="/" method="post">
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                Flight code<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" id="flight_code"/>
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                New status<span class="req">*</span>
+              </label>
+              <input type="text"required autocomplete="off" id="flight_status"/>
+            </div>
+          </div>
+
+          
+          <button type="button" class="button button-block" id="update"/>Update</button>
+          
+          </form>
+
+        </div>
+
+
+
+        
+        
+        
+      </div><!-- tab-content -->
+      
+</div> <!-- /form -->
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="js/controller.js"></script>
+
+</body>
+</html>

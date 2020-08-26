@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Airport</title>
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body onload="getCredentials();">
+<!-- partial:index.partial.html -->
+<div class="form">
+      <h1>Manager terminal</h1>
+      <div id="credentials"></div>
+      <ul class="tab-group">
+        <li class="tab active"><a href="#add_plane">Add plane</a></li>
+        <li class="tab"><a href="#add_flight">Add flight</a></li>
+        <li class="tab"><a href="#show_planes">Show all planes</a></li>
+        <li class="tab"><a href="#remove_plane">Remove a plane</a></li>
+        <li class="tab"><a href="#remove_flight">Remove a flight</a></li>
+      </ul>
+      
+      <div class="tab-content">
+        <div id="add_plane" style="display:block;">   
+          <h1>Add a plane to the database</h1>
+          
+          <form action="/" method="post">
+          
+            <div class="field-wrap">
+            <label>
+              Plane ID<span class="req">*</span>
+            </label>
+            <input type="text"required autocomplete="off" id = "id"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Model<span class="req">*</span>
+            </label>
+            <input type="text"required autocomplete="off" id ="model"/>
+          </div>
+
+          <!-- <div class="field-wrap">
+            <label>
+              Flight Company<span class="req">*</span>
+            </label>
+            <input type="text"required autocomplete="off" id ="company"/>
+          </div> -->
+          
+          
+          <button type="button" class="button button-block" id="plane_button"/>Add Plane</button>
+          
+          </form>
+
+        </div>
+
+        <div id="add_flight" style="display:none;">   
+          <h1>Add a flight to the schedule</h1>
+          
+          <form action="/" method="post">
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                Flight code<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" id="code"/>
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                Airport<span class="req">*</span>
+              </label>
+              <input type="text"required autocomplete="off" id="airport"/>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Destination<span class="req">*</span>
+            </label>
+            <input type="text"required autocomplete="off" id="destination"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Arrival<span class="req">*</span>
+            </label>
+            <br><br>
+            <input type="datetime-local"required autocomplete="off" id="arrival"/>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Departure<span class="req">*</span>
+            </label>
+            <br><br>
+            <input type="datetime-local"required autocomplete="off" id="departure"/>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Status<span class="req">*</span>
+            </label>
+            <input type="text"required autocomplete="off" id="status"/>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Plane code<span class="req">*</span>
+            </label>
+            <input type="text"required autocomplete="off" id="plane_code"/>
+          </div>
+          
+          <button type="button" class="button button-block" id="flight_button"/>Add flight</button>
+          
+          </form>
+
+        </div>
+
+         <div id="show_planes" style="display:none;">   
+          <h1>Show all registered planes</h1>
+          
+          
+          <form action="/" method="post">
+          
+          <button type="button" class="button button-block" id="planes_button"/>Show</button>
+          
+          </form>
+          
+
+        </div>
+
+
+        
+        <div id="remove_plane" style="display:none;">   
+          <h1>Remove a plane from the database</h1>
+          
+          <form action="/" method="post">
+          
+            <div class="field-wrap">
+            <label>
+              Plane ID<span class="req">*</span>
+            </label>
+            <input type="text"required autocomplete="off" id = "remove_plane_id"/>
+          </div>
+          
+          <button type="button" class="button button-block" id="remove_plane_button"/>Remove Plane</button>
+          
+          </form>
+
+        </div>
+
+        <div id="remove_flight" style="display:none;">   
+          <h1>Remove a flight from the flight schedule</h1>
+          
+          <form action="/" method="post">
+          
+            <div class="field-wrap">
+            <label>
+              Flight code<span class="req">*</span>
+            </label>
+            <input type="text"required autocomplete="off" id = "remove_flight_code"/>
+          </div>
+          
+          
+          
+          
+          <button type="button" class="button button-block" id="remove_flight_button"/>Remove flight</button>
+          
+          </form>
+
+        </div>
+
+        
+        
+        
+      </div><!-- tab-content -->
+      
+</div> <!-- /form -->
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="js/manager.js"></script>
+
+</body>
+</html>
